@@ -1,0 +1,145 @@
+
+    ###################################################
+    #                                                 #
+    #                Creative Commons                 #
+    #                                                 #
+    #              BY - Atribución (BY)               #
+    #           NC - No uso Comercial (NC)            #
+    #            SA - Compartir Igual (SA)            #
+    #                                                 #
+    ###################################################
+    #                                                 #
+    #        ALGORITMO RR + NRU + PAGINACIÓN:         #
+    #             Mario Hurtado Ubierna               #
+    #                                                 #
+    #              Autores anteriores:                #
+    #              David Cezar Toderas                #
+    #       RR + LRU + Segmentación paginada:         #
+    # Fernando Antón Ortega, Daniel Beato de la Torre #
+    #   LRU 1º: Ruben Uruñuela, Alejandro caballero   #
+    #    LRU 2º: Daniel Delgado, Ruben Marcos         #
+    #  Entrada datos (Prioridades NFU Paginación):    #
+    #        Marcos García, Mario de la Parte         #
+    #                                                 #
+    #        Sistemas Operativos 2º Semestre          #
+    #  Grado en ingeniería informática (2021-2022)    #
+    #                                                 #
+    #        Tutor: Jose Manuel Saiz Diez             #
+    #                                                 #
+    ###################################################
+
+
+
+    ####################################################
+    #                                                  #
+    #               INFORME DE PRÁCTICA                #
+    #           GESTIÓN DE MEMORIA VIRTUAL             #
+    #       -----------------------------------        #
+    #       -----------------------------------        #
+    #                                                  #
+    ####################################################
+    
+¿Desea  introducir los datos por teclado, por fichero o de forma aleatoria?: 
+
+    -> Introducir por teclado <-
+       Fichero de datos de última ejecución (datoslast.txt)
+       Fichero de datos por defecto (datosdefault.txt)
+       Otro fichero de datos
+       Utilizar datos aleatorios manuales
+       Fichero de rangos de última ejecución (datosrangoslast.txt)
+       Fichero de rangos por defecto (datosrangosdefault.txt)
+       Otro fichero de rangos
+       Aleatorio Total
+
+ Ref Pri Tej nMar Cod Dirección-Página.
+ Introduzca el Tamaño de la memoria: 10
+ Ref Pri Tej nMar Cod Dirección-Página.
+3
+ Ref Pri Tej nMar Cod Dirección-Página.
+7
+ Ref Pri Tej nMar Cod Dirección-Página.
+ Introduzca el Tamaño de cada marco: 4
+
+ Ref Pri Tej nMar Cod Dirección-Página.
+10
+ Ref Pri Tej nMar Cod Dirección-Página.
+ ¿Quiere que haya tiempos de entrada a CPU?(s/n):  Ref Pri Tej nMar Cod Dirección-Página.
+ Introduzca el factor de reubicación: 0
+
+ Ref Pri Tej nMar Cod Dirección-Página.
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   0   0    0   0 
+
+ Introduzca la prioridad del proceso 1: 3
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   0    0   0 
+
+ Introduzca el número de marcos del proceso 1: 2
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   0    2   0 
+
+ Introduzca el número de páginas de código del proceso 1: 1
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   0    2   1 
+
+ Introduzca la dirección de página 1: 1
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   0    2   1 1-0 
+
+ ¿Desea introducir otra direccion de memoria? (s = sí, n = no): n
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   1    2   1 1-0 
+ Nuevo número de marcos: 2
+
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   1    2   1 1-0 
+
+
+ ¿Desea introducir otro proceso? (s = sí, n = no): s
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P02   0   0    0   0 
+ P01   3   1    2   1 1-0 
+
+ Introduzca la prioridad del proceso 2: 5
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   1    2   1 1-0 
+ P02   5   0    0   0 
+
+ Introduzca el número de marcos del proceso 2: 2
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   1    2   1 1-0 
+ P02   5   0    2   0 
+
+ Introduzca el número de páginas de código del proceso 2: 1
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   1    2   1 1-0 
+ P02   5   0    2   1 
+
+ Introduzca la dirección de página 1: 1
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   1    2   1 1-0 
+ P02   5   0    2   1 1-0 
+
+ ¿Desea introducir otra direccion de memoria? (s = sí, n = no): n
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   1    2   1 1-0 
+ P02   5   1    2   1 1-0 
+ Nuevo número de marcos: 2
+
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   1    2   1 1-0 
+ P02   5   1    2   1 1-0 
+
+
+ ¿Desea introducir otro proceso? (s = sí, n = no): s
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P03   0   0    0   0 
+ P01   3   1    2   1 1-0 
+ P02   5   1    2   1 1-0 
+
+ Introduzca la prioridad del proceso 3: 4
+ Ref Pri Tej nMar Cod Dirección-Página.
+ P01   3   1    2   1 1-0 
+ P03   4   0    0   0 
+ P02   5   1    2   1 1-0 
+

@@ -1,0 +1,53 @@
+
+    ###################################################
+    #                                                 #
+    #                Creative Commons                 #
+    #                                                 #
+    #              BY - Atribución (BY)               #
+    #           NC - No uso Comercial (NC)            #
+    #            SA - Compartir Igual (SA)            #
+    #                                                 #
+    ###################################################
+    #                                                 #
+    #        ALGORITMO RR + NRU + PAGINACIÓN:         #
+    #             Mario Hurtado Ubierna               #
+    #                                                 #
+    #              Autores anteriores:                #
+    #              David Cezar Toderas                #
+    #       RR + LRU + Segmentación paginada:         #
+    # Fernando Antón Ortega, Daniel Beato de la Torre #
+    #   LRU 1º: Ruben Uruñuela, Alejandro caballero   #
+    #    LRU 2º: Daniel Delgado, Ruben Marcos         #
+    #  Entrada datos (Prioridades NFU Paginación):    #
+    #        Marcos García, Mario de la Parte         #
+    #                                                 #
+    #        Sistemas Operativos 2º Semestre          #
+    #  Grado en ingeniería informática (2021-2022)    #
+    #                                                 #
+    #        Tutor: Jose Manuel Saiz Diez             #
+    #                                                 #
+    ###################################################
+
+
+
+    ####################################################
+    #                                                  #
+    #               INFORME DE PRÁCTICA                #
+    #           GESTIÓN DE MEMORIA VIRTUAL             #
+    #       -----------------------------------        #
+    #       -----------------------------------        #
+    #                                                  #
+    ####################################################
+    
+¿Desea  introducir los datos por teclado, por fichero o de forma aleatoria?: 
+
+       Introducir por teclado
+    -> Fichero de datos de última ejecución (datoslast.txt) <-
+       Fichero de datos por defecto (datosdefault.txt)
+       Otro fichero de datos
+       Utilizar datos aleatorios manuales
+       Fichero de rangos de última ejecución (datosrangoslast.txt)
+       Fichero de rangos por defecto (datosrangosdefault.txt)
+       Otro fichero de rangos
+       Aleatorio Total
+

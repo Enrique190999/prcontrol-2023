@@ -41,9 +41,9 @@
     
 ¿Desea  introducir los datos por teclado, por fichero o de forma aleatoria?: 
 
-    -> Introducir por teclado <-
-       Fichero de datos de última ejecución (datoslast.txt)
-       Fichero de datos por defecto (datosdefault.txt)
+       Introducir por teclado
+       Fichero de datos de última ejecución (datoslast.txt) 
+    -> Fichero de datos por defecto (datosdefault.txt) <-
        Otro fichero de datos
        Utilizar datos aleatorios manuales
        Fichero de rangos de última ejecución (datosrangoslast.txt)
@@ -51,95 +51,199 @@
        Otro fichero de rangos
        Aleatorio Total
 
- Ref Pri Tej nMar Cod Dirección-Página.
- Introduzca el Tamaño de la memoria: 10
- Ref Pri Tej nMar Cod Dirección-Página.
-3
- Ref Pri Tej nMar Cod Dirección-Página.
-7
- Ref Pri Tej nMar Cod Dirección-Página.
- Introduzca el Tamaño de cada marco: 4
+ Has introducido los datos por fichero 
+ Memoria del Sistema:  10
+ Tamaño   de  Página:  4
+ Factor de reubicación: 0
 
- Ref Pri Tej nMar Cod Dirección-Página.
-10
- Ref Pri Tej nMar Cod Dirección-Página.
- ¿Quiere que haya tiempos de entrada a CPU?(s/n):  Ref Pri Tej nMar Cod Dirección-Página.
- Introduzca el factor de reubicación: 0
-
- Ref Pri Tej nMar Cod Dirección-Página.
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   0   0    0   0 
-
- Introduzca la prioridad del proceso 1: 3
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   0    0   0 
-
- Introduzca el número de marcos del proceso 1: 2
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   0    2   0 
-
- Introduzca el número de páginas de código del proceso 1: 1
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   0    2   1 
-
- Introduzca la dirección de página 1: 1
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   0    2   1 1-0 
-
- ¿Desea introducir otra direccion de memoria? (s = sí, n = no): n
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   1    2   1 1-0 
- Nuevo número de marcos: 2
-
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   1    2   1 1-0 
-
-
- ¿Desea introducir otro proceso? (s = sí, n = no): s
- Ref Pri Tej nMar Cod Dirección-Página.
- P02   0   0    0   0 
- P01   3   1    2   1 1-0 
-
- Introduzca la prioridad del proceso 2: 5
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   1    2   1 1-0 
- P02   5   0    0   0 
-
- Introduzca el número de marcos del proceso 2: 2
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   1    2   1 1-0 
- P02   5   0    2   0 
-
- Introduzca el número de páginas de código del proceso 2: 1
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   1    2   1 1-0 
- P02   5   0    2   1 
-
- Introduzca la dirección de página 1: 1
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   1    2   1 1-0 
- P02   5   0    2   1 1-0 
-
- ¿Desea introducir otra direccion de memoria? (s = sí, n = no): n
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   1    2   1 1-0 
- P02   5   1    2   1 1-0 
- Nuevo número de marcos: 2
-
- Ref Pri Tej nMar Cod Dirección-Página.
+ Ref Tll Tej nMar Cod Dirección-Página.
  P01   3   1    2   1 1-0 
  P02   5   1    2   1 1-0 
 
+Seleccione el tipo de ejecución: 
 
- ¿Desea introducir otro proceso? (s = sí, n = no): s
- Ref Pri Tej nMar Cod Dirección-Página.
- P03   0   0    0   0 
- P01   3   1    2   1 1-0 
- P02   5   1    2   1 1-0 
+   Por eventos (Pulsando 'INTRO' en cada cambio de estado)
+   Automático (Temporizada, cada 'x' segundos se realizará una iteración)
+-> Completa (Todo de una vez, muestra el resumen final) <-
+   Por instantes de tiempo
+   Último instante (muestra el estado final)
 
- Introduzca la prioridad del proceso 3: 4
- Ref Pri Tej nMar Cod Dirección-Página.
- P01   3   1    2   1 1-0 
- P03   4   0    0   0 
- P02   5   1    2   1 1-0 
+ PRIORIDAD MAYOR/MENOR + PAGINACIÓN + ÓPTIMO + NO CONTINUO + REUBICABLE
+ T=0  MemTot:10  TamMarc:4  MarcMem:2  FactReub:0  Ref Tll Tej nMar Cod Tesp Tret Trej Mini Mfin Estado            Dirección-Página
+ P01   3   1    2   1    -    -    -    -    - Fuera de sistema  1-0 
+ P02   5   1    2   1    -    -    -    -    - Fuera de sistema  1-0 
+Tiempo medio de espera: 0	Tiempo medio de retorno: 0
+-Log de Eventos:
+-Log de Páginas:
+ Proceso:   |----|----|
+ Marco:     |M0  |M1  |
+ Página:    |----|----|
+ Dir. Mem.: |    |    |
+ Contador:   [--] [--]
+ Apuntador:            
 
+    |      |
+ BM |  _  _| M: 2
+    |  0   |
+
+    |   |
+ BT |   | T: 0
+    |  0|
+
+ PRIORIDAD MAYOR/MENOR + PAGINACIÓN + ÓPTIMO + NO CONTINUO + REUBICABLE
+ T=3  MemTot:10  TamMarc:4  MarcMem:2  FactReub:0  Ref Tll Tej nMar Cod Tesp Tret Trej Mini Mfin Estado            Dirección-Página
+ P01   3   1    2   1    0    0    1    0    1 En ejecución      1-0 
+ P02   5   1    2   1    -    -    -    -    - Fuera de sistema  1-0 
+Tiempo medio de espera: 0	Tiempo medio de retorno: 0
+-Log de Eventos:
+El proceso P01 ha llegado al sistema
+El proceso P01 ha entrado en memoria a partir de la dirección 0
+El proceso P01 ha entrado al procesador
+-Log de Páginas:
+Se ha introducido la página 0 del proceso P01 en el marco 1 
+Se han producido 1 fallos de página en el proceso P01 
+
+ Proceso:   |P01------|
+ Marco:     |M0   M1  |
+ Página:    |   +|   0|
+ Dir. Mem.: |   0     |
+ Contador:   [++] [ *]
+ Apuntador:       ^^^^ 
+
+    |P01   |
+ BM |  +  0| M: 2
+    |  0   |
+
+    |         P01|
+ BT |  _  _  _  0| T: 3
+    |  0        3|
+
+ PRIORIDAD MAYOR/MENOR + PAGINACIÓN + ÓPTIMO + NO CONTINUO + REUBICABLE
+ T=4  MemTot:10  TamMarc:4  MarcMem:2  FactReub:0  Ref Tll Tej nMar Cod Tesp Tret Trej Mini Mfin Estado            Dirección-Página
+ P01   3   1    2   1    0    1    -    -    - Finalizado        1-0 
+ P02   5   1    2   1    -    -    -    -    - Fuera de sistema  1-0 
+Tiempo medio de espera: 0	Tiempo medio de retorno: .50
+-Log de Eventos:
+El proceso P01 ha finalizado su ejecución
+-Log de Páginas:
+Se han producido 1 fallos de página en el proceso P01 
+Historial de paginas P01:
+
+       0           
+M1     M0-+        
+M2    >M1-0-*      
+
+ Proceso:   |----|----|
+ Marco:     |M0  |M1  |
+ Página:    |----|----|
+ Dir. Mem.: |    |    |
+ Contador:   [--] [--]
+ Apuntador:            
+
+    |      |
+ BM |  _  _| M: 2
+    |  0   |
+
+    |         P01   |
+ BT |  _  _  _  0  -| T: 4
+    |  0        3  4|
+
+ PRIORIDAD MAYOR/MENOR + PAGINACIÓN + ÓPTIMO + NO CONTINUO + REUBICABLE
+ T=5  MemTot:10  TamMarc:4  MarcMem:2  FactReub:0  Ref Tll Tej nMar Cod Tesp Tret Trej Mini Mfin Estado            Dirección-Página
+ P01   3   1    2   1    0    1    -    -    - Finalizado        1-0 
+ P02   5   1    2   1    0    0    1    0    1 En ejecución      1-0 
+Tiempo medio de espera: 0	Tiempo medio de retorno: .50
+-Log de Eventos:
+El proceso P02 ha llegado al sistema
+El proceso P02 ha entrado en memoria a partir de la dirección 0
+El proceso P02 ha entrado al procesador
+-Log de Páginas:
+Se ha introducido la página 0 del proceso P02 en el marco 1 
+Se han producido 1 fallos de página en el proceso P01 
+Se han producido 1 fallos de página en el proceso P02 
+
+ Proceso:   |P02------|
+ Marco:     |M0   M1  |
+ Página:    |   +|   0|
+ Dir. Mem.: |   0     |
+ Contador:   [++] [ *]
+ Apuntador:       ^^^^ 
+
+    |P02   |
+ BM |  +  0| M: 2
+    |  0   |
+
+    |         P01   P02|
+ BT |  _  _  _  0  _  0| T: 5
+    |  0        3  4  5|
+
+ PRIORIDAD MAYOR/MENOR + PAGINACIÓN + ÓPTIMO + NO CONTINUO + REUBICABLE
+ T=5  MemTot:10  TamMarc:4  MarcMem:2  FactReub:0  Ref Tll Tej nMar Cod Tesp Tret Trej Mini Mfin Estado            Dirección-Página
+ P01   3   1    2   1    0    1    -    -    - Finalizado        1-0 
+ P02   5   1    2   1    0    1    -    -    - Finalizado        1-0 
+Tiempo medio de espera: 0	Tiempo medio de retorno: 1.00
+-Log de Eventos:
+El proceso P02 ha finalizado su ejecución
+-Log de Páginas:
+Se han producido 1 fallos de página en el proceso P01 
+Se han producido 1 fallos de página en el proceso P02 
+
+Historial de paginas P02:
+
+       0           
+M1     M0-+        
+M2    >M1-0-*      
+
+ Proceso:   |----|----|
+ Marco:     |M0  |M1  |
+ Página:    |----|----|
+ Dir. Mem.: |    |    |
+ Contador:   [--] [--]
+ Apuntador:            
+
+    |      |
+ BM |  _  _| M: 2
+    |  0   |
+
+    |         P01   P02|
+ BT |  _  _  _  0  _  0| T: 5
+    |  0        3  4  5|
+
+
+
+
+
+
+
+
+ T.Espera: Tiempo que el proceso no ha estado ejecutándose en la CPU desde que entra en memoria hasta que sale
+ Inicio/Fin:  Tiempo de llegada al gestor de memoria del proceso y tiempo de salida del proceso
+ T.Retorno:   Tiempo total de ejecución del proceso, incluyendo tiempos de espera, desde la señal de entrada hasta la salida
+ Fallos Pág.:   Número de fallos de página que han ocurrido en la ejecución de cada proceso
+
+
+ Resumen final con tiempos de ejecución y fallos de página de cada proceso
+
+
+|
+|  Proceso: P01	T.Espera: 0	Inicio/fin: 3/4	T.Retorno: 1	Fallos Pág.: 1
+|
+|  Proceso: P02	T.Espera: 0	Inicio/fin: 5/6	T.Retorno: 1	Fallos Pág.: 1
+|
+   Tiempo total transcurrido en ejecutar todos los procesos: 5
+   Media tiempo espera  de todos los procesos: 0
+   Media tiempo retorno de todos los procesos: 1.000
+
+
+
+    ############################################################
+    #                                                          #
+    #                   INFORME DE PRÁCTICA                    #
+    #               GESTIÓN DE MEMORIA VIRTUAL                 #
+    #       -------------------------------------------        #
+    #       --------------      FIN       -------------        #
+    #       -------------------------------------------        #
+    #       -------------------------------------------        #
+    #                                                          #
+    ############################################################
+    

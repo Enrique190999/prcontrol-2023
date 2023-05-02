@@ -19,7 +19,7 @@ tamMem=0;
 #Utilizada en todo el programa, es el size de la memoria total
 marcosMem=0;
 #Utilizada en todo el programa, es el número de marcos que caben en la memoria
-tamQuant=0;
+tamQuant=10;
 #Utilizada en todo el programa, es el quantum de ejecución
 tamPag=0;
 #Utilizada en todo el programa, es el size de las páginas
@@ -133,8 +133,9 @@ minMarcMem=0;
 maxMarcMem=0;
 minTamPag=0;
 maxTamPag=0;
+# 02-05 INICIALIZO EL MINIMO Y EL MAXIMO DEL QUANTUM DE TIEMPO
 minQuant=0;
-maxQuant=0;
+maxQuant=99;
 minReub=0;
 maxReub=0;
 minProcesosAGenerar=0;
@@ -447,7 +448,8 @@ cabeceraTeclado(){
     printf " Tamaño de la memoria principal (en direcciones):                           \e[1m%6s\e[0m\n" "${tamMem}"
     printf " Tamaño de cada marco de página (en direcciones):                           \e[1m%6s\e[0m\n" "${tamPag}"
     printf " Marcos de página de la memoria principal:                                  \e[1m%6s\e[0m\n" "${marcosMem}"
-    printf " Quantum de tiempo:                                                         \e[1m%6s\e[0m\n" "${tamQuant}"
+    # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO 
+    # printf " Quantum de tiempo:                                                         \e[1m%6s\e[0m\n" "${tamQuant}"
     if [[ "$conEntradaCPU" == 's' || "$conEntradaCPU" == "1"  ]]
     then
         printf " Coste en tiempo por página:                                                \e[1m%6s\e[0m\n" "${tiempoPorPagina}"
@@ -522,7 +524,8 @@ CabeceraAleatorio() {
     printf " Tamaño de cada marco de página (en direcciones):                 \e[1m%6s\e[0m  Min: \e[1m%6s\e[0m Max: \e[1m%6s\e[0m\n" "${tamPag}" "${minTamPag}" "${maxTamPag}"
     printf " Tamaño de la memoria principal (en direcciones):                 \e[1m%6s\e[0m\n" "${tamMem}"
     printf " Factor de reubicación:                                           \e[1m%6s\e[0m  Min: \e[1m%6s\e[0m Max: \e[1m%6s\e[0m\n" "${factReub}" "${minReub}" "${maxReub}"
-    printf " Quantum de tiempo:                                               \e[1m%6s\e[0m  Min: \e[1m%6s\e[0m Max: \e[1m%6s\e[0m\n" "${tamQuant}" "${minQuant}" "${maxQuant}"
+    # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO
+    # printf " Quantum de tiempo:                                               \e[1m%6s\e[0m  Min: \e[1m%6s\e[0m Max: \e[1m%6s\e[0m\n" "${tamQuant}" "${minQuant}" "${maxQuant}"
     if [[  "$conEntradaCPU" == 's' || "$conEntradaCPU" == "1" ]]
     then
         printf " Coste de tiempo por pagina:                                      \e[1m%6s\e[0m  Min: \e[1m%6s\e[0m Max: \e[1m%6s\e[0m\n" "${tiempoPorPagina}" "${minTiempoPorPagina}" "${maxTiempoPorPagina}"
@@ -1198,22 +1201,23 @@ entradaTeclado(){
     clear;
     cabeceraTeclado;
 
-    echo -n -e " Introduzca el \e[1;33mquantum\e[0m de tiempo de ejecución de Round Robin: ";
-    read tamQuant;
-    echo -n " Introduzca el quantum de tiempo de ejecución de Round Robin: " >> $informe;
-    echo -n -e " Introduzca el \e[1;33mquantum\e[0m de tiempo de ejecución de Round Robin: " >> $informeColor;
-    until [[ $tamQuant =~ [0-9] && $tamQuant -gt 0 ]]
-        do
-            echo -e "\n\e[1;31m El quantum debe ser mayor que 0\e[0m";
-            echo -n -e " Introduzca el \e[1;33mquantum\e[0m de tiempo de ejecución de Round Robin: ";
-            read tamQuant;
-        done
-    echo "$tamQuant" >> $informe;
-    echo -e "\e[1;32m$tamQuant\e[0m" >> $informeColor;
-    
-    sleep 0.2;
-    clear;
-    cabeceraTeclado;
+    # 02-05 COMENTO LA LINEA DONDE PIDO AL USUARIO EL QUANTUM DE TIEMPO
+    # echo -n -e " Introduzca el \e[1;33mquantum\e[0m de tiempo de ejecución de Round Robin: ";
+    # read tamQuant;
+    # echo -n " Introduzca el quantum de tiempo de ejecución de Round Robin: " >> $informe;
+    # echo -n -e " Introduzca el \e[1;33mquantum\e[0m de tiempo de ejecución de Round Robin: " >> $informeColor;
+    # until [[ $tamQuant =~ [0-9] && $tamQuant -gt 0 ]]
+    #     do
+    #         echo -e "\n\e[1;31m El quantum debe ser mayor que 0\e[0m";
+    #         echo -n -e " Introduzca el \e[1;33mquantum\e[0m de tiempo de ejecución de Round Robin: ";
+    #         read tamQuant;
+    #     done
+    # echo "$tamQuant" >> $informe;
+    # echo -e "\e[1;32m$tamQuant\e[0m" >> $informeColor
+
+    # sleep 0.2;
+    # clear;
+    # cabeceraTeclado;
 
 
 
@@ -1283,7 +1287,8 @@ entradaTeclado(){
 
     #!#
     #Se imprime en el fichero de datos
-    echo -en "${tamMem}\n${tamQuant}\n${tamPag}\n${tiempoPorPagina}\n${factReub}\n" > "${ficheroAMano}"
+    # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO
+    # echo -en "${tamMem}\n${tamQuant}\n${tamPag}\n${tiempoPorPagina}\n${factReub}\n" > "${ficheroAMano}"
 
 
 
@@ -1858,16 +1863,16 @@ entradaAleatoria() {
         factReub=$(( $RANDOM % ($maxReub - $minReub + 1) + $minReub ))
     fi
 
-
+    # 02-05 COMENTO EL PEDIR POR PANTALLA AL USUARIO EL RANGO DEL QUANTUM
     # Quantum del Round Robin
-    prompt="Introduce el rango para el \e[1;33mquantum\e[0m del Round Robin: "
-    preguntarDatoRango "${prompt}" minQuant maxQuant 1 99999
+    # prompt="Introduce el rango para el \e[1;33mquantum\e[0m del Round Robin: "
+    # preguntarDatoRango "${prompt}" minQuant maxQuant 1 99999
 
-    if [[ $minQuant -eq $maxQuant ]]; then
-        tamQuant=$minQuant;
-    else
-        tamQuant=$(( $RANDOM % ($maxQuant - $minQuant + 1) + $minQuant ));
-    fi
+    # if [[ $minQuant -eq $maxQuant ]]; then
+    #     tamQuant=$minQuant;
+    # else
+    #     tamQuant=$(( $RANDOM % ($maxQuant - $minQuant + 1) + $minQuant ));
+    # fi
 
     echo -n -e " ¿Quiere que haya \e[1;33mtiempos de entrada a la CPU\e[0m?(s/n): ";
     read conEntradaCPU
@@ -2338,7 +2343,8 @@ imprimeProcesosFinal(){
 
     #imprimimos para el informe a color
     echo -e " Memoria del Sistema:  $tamMem" | tee -a $informeColor
-    echo -e " Quantum de   Tiempo:  $tamQuant" | tee -a $informeColor
+    # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO
+    # echo -e " Quantum de   Tiempo:  $tamQuant" | tee -a $informeColor
     echo -e " Tamaño  de   Página:  $tamPag" | tee -a $informeColor
     if [[ $tiempoPorPagina -ne 0 ]]
     then
@@ -2351,7 +2357,8 @@ imprimeProcesosFinal(){
 
     #imprimimos para informe a BN
     echo " Memoria del Sistema:  $tamMem" >> $informe
-    echo " Quantum  de  Tiempo:  $tamQuant" >> $informe
+    # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO
+    # echo " Quantum  de  Tiempo:  $tamQuant" >> $informe
     echo " Tamaño   de  Página:  $tamPag" >> $informe
     if [[ $tiempoPorPagina -ne 0 ]]
     then
@@ -2502,8 +2509,9 @@ generar_nombre_procesos() {
 }
 
 # Función que imprime los parámetros generales con los que se ejecuta el algoritmo
+# 02-05 MODIFICO ROUND ROGIN POR PRIORIDAD MAYOR/MENOR
 imprimeTiempo(){
-    echo  -e " \e[1;39mROUND ROBIN + PAGINACIÓN + ÓPTIMO + NO CONTINUO + REUBICABLE\e[0m";
+    echo  -e " \e[1;39mPRIORIDAD MAYOR/MENOR + PAGINACIÓN + ÓPTIMO + NO CONTINUO + REUBICABLE\e[0m";
     echo -en " \e[39mT=\e[1;31m$tiempoDelSistema\e[0m ";
     echo -en " \e[39mMemTot:\e[1;31m$tamMem\e[0m ";
     echo -en " \e[39mTamMarc:\e[1;31m$tamPag\e[0m ";
@@ -2513,7 +2521,8 @@ imprimeTiempo(){
         echo -en " \e[39mTentradaCPU:\e[1;31m$tiempoPorPagina\e[0m ";
     fi
     echo -en " \e[39mFactReub:\e[1;31m$factReub\e[0m ";
-    echo -e " \e[39mQuant:\e[1;31m$tamQuant\e[0m ";
+    # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO
+    # echo -e " \e[39mQuant:\e[1;31m$tamQuant\e[0m ";
     
 }
 
@@ -4376,7 +4385,8 @@ ImprimeEstadoSistema()
 {
     imprimeTiempo
     diagramaresumen
-    ImprimeEstadoRoundRobin
+    # 02-05 COMENTO LA LINEA DONDE SE IMPRIME EL ESTADO DEL ROUND ROBIN
+    # ImprimeEstadoRoundRobin
     echo "-Log de Eventos:"
     echo -ne $logDeEventos
     echo "-Log de Páginas:"
@@ -4708,7 +4718,8 @@ GestionFinDeProceso()
         if [[ $(HaFinalizadoProceso $procesoEjecutandose) -eq 1 ]]
         then
             estadosProcesos[$procesoEjecutandose]="Finalizado"
-            logDeEventos+="Se ha ejecutado un quantum de \e[31m$(( $tamQuant - $quantumRestante ))\e[0m del proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m\n"
+            # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO
+            # logDeEventos+="Se ha ejecutado un quantum de \e[31m$(( $tamQuant - $quantumRestante ))\e[0m del proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m\n"
             logDeEventos+="El proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m ha finalizado su ejecución\n"
             hayFinDeProceso=1
             cambiarProceso=1
@@ -4720,14 +4731,16 @@ GestionFinDeProceso()
         then
             estadosProcesos[$procesoEjecutandose]="En pausa"
             colaRoundRobin+=($procesoEjecutandose)
-            logDeEventos+="Se ha ejecutado un quantum de \e[31m$(( $tamQuant - $quantumRestante ))\e[0m del proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m\n"
+            # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO
+            # logDeEventos+="Se ha ejecutado un quantum de \e[31m$(( $tamQuant - $quantumRestante ))\e[0m del proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m\n"
             cambiarProceso=1
         fi
     else
         if [[ $(HaFinalizadoProceso $procesoEjecutandose) -eq 1 ]]
         then
             estadosProcesos[$procesoEjecutandose]="Finalizado"
-            logDeEventos+="Se ha ejecutado un quantum de \e[31m$(( $tamQuant - $quantumRestante ))\e[0m del proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m\n"
+            # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO
+            # logDeEventos+="Se ha ejecutado un quantum de \e[31m$(( $tamQuant - $quantumRestante ))\e[0m del proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m\n"
             logDeEventos+="El proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m ha finalizado su ejecución\n"
             hayFinDeProceso=1
             cambiarProceso=1
@@ -4739,7 +4752,8 @@ GestionFinDeProceso()
         then
             estadosProcesos[$procesoEjecutandose]="En pausa"
             colaRoundRobin+=($procesoEjecutandose)
-            logDeEventos+="Se ha ejecutado un quantum de \e[31m$(( $tamQuant - $quantumRestante ))\e[0m del proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m\n"
+            # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO
+            # logDeEventos+="Se ha ejecutado un quantum de \e[31m$(( $tamQuant - $quantumRestante ))\e[0m del proceso ${nombreProcesoColor[$procesoEjecutandose]}\e[0m\n"
 
         fi
 

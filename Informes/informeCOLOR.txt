@@ -10,11 +10,12 @@
     [1;48;5;85m                                                      [0m
     [1;48;5;85m                                                      [0m
     [1;48;5;85m  [0m                                                  [1;48;5;85m  [0m
-    [1;48;5;85m  [0m         [1;4;31mALGORITMO RR + NRU + PAGINACIÓN:[0m         [1;48;5;85m  [0m
+    [1;48;5;85m  [0m         [1;4;31mALGORITMO PRIORIDAD MAYOR/MENOR + NRU + PAGINACIÓN:[0m         [1;48;5;85m  [0m
     [1;48;5;85m  [0m                                                  [1;48;5;85m  [0m
-    [1;48;5;85m  [0m                [1;mMario Hurtado Ubierna[0m             [1;48;5;85m  [0m
+    [1;48;5;85m  [0m                [1;mEnrique Padilla Padilla[0m             [1;48;5;85m  [0m
     [1;48;5;85m  [0m                                                  [1;48;5;85m  [0m
     [1;48;5;85m  [0m               Autores anteriores:                [1;48;5;85m  [0m
+    [1;48;5;85m  [0m               Mario Hurtado Ubierna              [1;48;5;85m  [0m
     [1;48;5;85m  [0m                David Cezar Toderas               [1;48;5;85m  [0m
     [1;48;5;85m  [0m        RR + LRU + Segmentación paginada:         [1;48;5;85m  [0m
     [1;48;5;85m  [0m Fernando Antón Ortega, Daniel Beato de la Torre  [1;48;5;85m  [0m

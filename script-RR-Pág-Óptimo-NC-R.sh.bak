@@ -273,10 +273,10 @@ cabecera()
     "\e[1;48;5;85m                                                  \e[0m\n" \
     "\e[1;48;5;85m  \e[0m                                              \e[1;48;5;85m  \e[0m\n" \
     "\e[1;48;5;85m  \e[0m       \e[1;4;31mALGORITMO RR + OPTIMO + PAGINACIÓN:\e[0m    \e[1;48;5;85m  \e[0m\n" \
-    "\e[1;48;5;85m  \e[0m            \e[1;32mEnrique Padilla Padilla\e[0m           \e[1;48;5;85m  \e[0m\n" \
+    "\e[1;48;5;85m  \e[0m              \e[1;32mEnrique Padilla Padilla\e[0m           \e[1;48;5;85m  \e[0m\n" \
     "\e[1;48;5;85m  \e[0m                                              \e[1;48;5;85m  \e[0m\n" \
     "\e[1;48;5;85m  \e[0m             Autores anteriores:              \e[1;48;5;85m  \e[0m\n" \
-    "\e[1;48;5;85m  \e[0m             Mario Hurtado Ubierna            \e[1;48;5;85m  \e[0m\n" \
+    "\e[1;48;5;85m  \e[0m               Mario Hurtado Ubierna            \e[1;48;5;85m  \e[0m\n" \
     "\e[1;48;5;85m  \e[0m               David Cezar Toderas            \e[1;48;5;85m  \e[0m\n" \
     "\e[1;48;5;85m  \e[0m   	 RR+LRU+P  Diego García Muñoz	         \e[1;48;5;85m  \e[0m\n" \
     "\e[1;48;5;85m  \e[0m  RR+LRU+SP 1º: Fernando Antón, Daniel Beato  \e[1;48;5;85m  \e[0m\n" \

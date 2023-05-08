@@ -9,10 +9,12 @@
     #                                                 #
     ###################################################
     #                                                 #
-    #        ALGORITMO RR + NRU + PAGINACIÓN:         #
-    #             Mario Hurtado Ubierna               #
+    #               ALGORITMO PRIORIDAD               #
+    #          MAYOR/MENOR + NRU + PAGINACIÓN:        #
+    #             Enrique Padilla Padilla             #
     #                                                 #
     #              Autores anteriores:                #
+    #              Mario Hurtado Ubierna              #
     #              David Cezar Toderas                #
     #       RR + LRU + Segmentación paginada:         #
     # Fernando Antón Ortega, Daniel Beato de la Torre #

@@ -57,7 +57,9 @@
  Ref Tll Tej nMar Cod Dirección-Página.
  Introduzca el Tamaño de la [1;33mmemoria[0m: [1;32m10[0m
  Ref Tll Tej nMar Cod Dirección-Página.
- Introduzca el Tamaño de cada [1;33mmarco[0m: [1;32m10[0m
+ Introduzca el Tamaño de cada [1;33mmarco[0m: [1;32m2[0m
 
  Ref Tll Tej nMar Cod Dirección-Página.
  ¿Quiere que haya [1;33mtiempos de entrada a CPU[0m?(s/n):  Ref Tll Tej nMar Cod Dirección-Página.
+ ¿Quieres[1;33m prioridad[0m Mayor (m) o Menor(n)? [1;32mm[0m
+ Ref Tll Tej nMar Cod Dirección-Página.

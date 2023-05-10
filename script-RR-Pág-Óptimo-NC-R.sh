@@ -228,7 +228,7 @@ minPaginasCodigo=0
 maxPaginasCodigo=0
 
 # 08-05
-priroidadMayorSMenorN="s"
+prioridadMayorMMenorN="0"
 maximoPrioridad=0
 minimoPrioridad=0
 #####################################Tiempo de Entrada CPU#####################
@@ -461,6 +461,10 @@ cabeceraTeclado(){
     printf " Tamaño de la memoria principal (en direcciones):                           \e[1m%6s\e[0m\n" "${tamMem}"
     printf " Tamaño de cada marco de página (en direcciones):                           \e[1m%6s\e[0m\n" "${tamPag}"
     printf " Marcos de página de la memoria principal:                                  \e[1m%6s\e[0m\n" "${marcosMem}"
+    printf " Prioridad Mayor/menor:                                                     \e[1m%6s\e[0m\n" "$(case $prioridadMayorMMenorN in m) echo 'Mayor' ;; n) echo 'Menor';; 0) echo 'Sin definir';; esac)"
+    printf " Prioridad mínima:                                                          \e[1m%6s\e[0m\n" "${minimoPrioridad}"
+    printf " Prioridad mínima:                                                          \e[1m%6s\e[0m\n" "${maximoPrioridad}"
+    
     # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO 
     # printf " Quantum de tiempo:                                                         \e[1m%6s\e[0m\n" "${tamQuant}"
     if [[ "$conEntradaCPU" == 's' || "$conEntradaCPU" == "1"  ]]
@@ -1248,32 +1252,7 @@ entradaTeclado(){
     clear;
     cabeceraTeclado;
 
-    # 08-05 Datos de prioridad mayor menor a introducir por teclado
-
-    echo -n -e " ¿Quieres \e[1;33m prioridad\e[0m Mayor (S) o Menor(n)? ";
-    read priroidadMayorSMenorN;
-
-    priroidadMayorSMenorN=$(echo "priroidadMayorSMenorN" | tr '[:upper:]' '[:lower:]')
-    echo -n "¿Quieres prioridad Mayor (S) o Menor (n)? " >> $informe;
-    
-    echo -n -e " ¿Quieres \e[1;33m prioridad\e[0m Mayor (S) o Menor(n)? " >> $informeColor;
-
-    until [[ $priroidadMayorSMenorN == "n" || $priroidadMayorSMenorN == "s" ]]
-        do
-            echo -e "\n\e[1;31mLas opciones validas son s para prioridad mayor y n para prioridad menor \e[0m\e[1;33";
-            echo -n -e "  ¿Quieres \e[1;33m prioridad\e[0m Mayor (S) o Menor(n)? ";
-            read priroidadMayorSMenorN;
-            priroidadMayorSMenorN=$(echo "priroidadMayorSMenorN" | tr '[:upper:]' '[:lower:]')
-        done
-    echo "$priroidadMayorSMenorN" >> $informe;
-    echo -e "\e[1;32m$priroidadMayorSMenorN\e[0m" >> $informeColor;
-
-    sleep 0.2;
-    clear;
-    cabeceraTeclado;
-
-
-    if [[ "$conEntradaCPU" == 's' ]]
+     if [[ "$conEntradaCPU" == 's' ]]
     then
         echo -n -e " Introduzca el \e[1;33mtiempo por pagina\e[0m en entrada a la CPU: ";
         read tiempoPorPagina;
@@ -1302,7 +1281,60 @@ entradaTeclado(){
         conEntradaCPU=0
     fi
 
-     echo -n -e " Introduzca el \e[1;33mfactor de reubicación\e[0m para la memoria (nº de huecos vacios para intentar reubicar): ";
+    # 08-05 Datos de prioridad mayor menor a introducir por teclado
+
+    echo -n -e " ¿Quieres\e[1;33m prioridad\e[0m Mayor (m) o Menor(n)? ";
+    read prioridadMayorMMenorN;
+    
+    prioridadMayorMMenorN=$(echo "$prioridadMayorMMenorN" | tr '[:upper:]' '[:lower:]')
+    echo -n " ¿Quieres prioridad Mayor (m) o Menor (n)? " >> $informe;
+    echo -n -e " ¿Quieres\e[1;33m prioridad\e[0m Mayor (m) o Menor(n)? " >> $informeColor;
+
+    until [[ "$prioridadMayorMMenorN" == "m" || "$prioridadMayorMMenorN" == "n" ]];
+        do
+            echo -e "\n\e[1;31m Las opciones validas son m para prioridad mayor y n para prioridad menor \e[0m";
+            echo -n -e " ¿Quieres\e[1;33m prioridad\e[0m Mayor (m) o Menor(n)? ";
+            read prioridadMayorMMenorN;
+            prioridadMayorMMenorN=$(echo "$prioridadMayorMMenorN" | tr '[:upper:]' '[:lower:]')
+        done
+    echo "$prioridadMayorMMenorN" >> $informe;
+    echo -e "\e[1;32m$prioridadMayorMMenorN\e[0m" >> $informeColor;
+
+    sleep 0.2;
+    clear;
+    cabeceraTeclado;
+
+    # 09-05 Introduzco prioridad maxima y minima
+
+    # Pido prioridad minima y compruebo que sea un número mayor o igual a 0
+    echo -n -e " Introduzca la \e[1;33m prioridad mínima \e[0m";
+    read minimoPrioridad;
+    
+    while ! [[ "$minimoPrioridad" =~ ^[0-9]+$ ]]; do
+        echo -e "\n\e[1;31m Solo es valido un numero mayor o igual que 0\e[0m";
+        echo -n -e " Introduzca la \e[1;33m prioridad mínima \e[0m";
+        read minimoPrioridad;
+    done
+
+    sleep 0.2;
+    clear;
+    cabeceraTeclado;
+
+    # Pido prioridad maxima y compruebo que sea un número mayor que la prioridad mínima
+    echo -n -e " Introduzca la \e[1;33m prioridad máxima \e[0m";
+    read maximoPrioridad;
+    
+    while ! [ "$maximoPrioridad" -gt "$minimoPrioridad" ] && [[ "$maximoPrioridad" =~ ^[0-9]+$ ]]; do
+        echo -e "\n\e[1;31m Solo es valido un numero mayor que ${minimoPrioridad} (prioridad mínima)\e[0m";
+        echo -n -e " Introduzca la \e[1;33m prioridad maxima \e[0m";
+        read maximoPrioridad;
+    done
+
+    sleep 0.2;
+    clear;
+    cabeceraTeclado;
+
+    echo -n -e " Introduzca el \e[1;33mfactor de reubicación\e[0m para la memoria (nº de huecos vacios para intentar reubicar): ";
     read factReub;
     echo -n " Introduzca el factor de reubicación: " >> $informe;
     echo -n -e " Introduzca el \e[1;33mfactor de reubicación\e[0m de la memoria: " >> $informeColor;

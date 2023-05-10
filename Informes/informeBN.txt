@@ -56,7 +56,9 @@
  Ref Tll Tej nMar Cod Dirección-Página.
  Introduzca el Tamaño de la memoria: 10
  Ref Tll Tej nMar Cod Dirección-Página.
- Introduzca el Tamaño de cada marco: 10
+ Introduzca el Tamaño de cada marco: 2
 
  Ref Tll Tej nMar Cod Dirección-Página.
  ¿Quiere que haya tiempos de entrada a CPU?(s/n):  Ref Tll Tej nMar Cod Dirección-Página.
+ ¿Quieres prioridad Mayor (m) o Menor (n)? m
+ Ref Tll Tej nMar Cod Dirección-Página.

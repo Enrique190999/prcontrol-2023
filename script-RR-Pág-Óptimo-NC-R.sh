@@ -228,7 +228,7 @@ minPaginasCodigo=0
 maxPaginasCodigo=0
 
 # 08-05
-priroidadMayorTrueMenorFalse=true
+priroidadMayorSMenorN="s"
 maximoPrioridad=0
 minimoPrioridad=0
 #####################################Tiempo de Entrada CPU#####################
@@ -1248,6 +1248,31 @@ entradaTeclado(){
     clear;
     cabeceraTeclado;
 
+    # 08-05 Datos de prioridad mayor menor a introducir por teclado
+
+    echo -n -e " ¿Quieres \e[1;33m prioridad\e[0m Mayor (S) o Menor(n)? ";
+    read priroidadMayorSMenorN;
+
+    priroidadMayorSMenorN=$(echo "priroidadMayorSMenorN" | tr '[:upper:]' '[:lower:]')
+    echo -n "¿Quieres prioridad Mayor (S) o Menor (n)? " >> $informe;
+    
+    echo -n -e " ¿Quieres \e[1;33m prioridad\e[0m Mayor (S) o Menor(n)? " >> $informeColor;
+
+    until [[ $priroidadMayorSMenorN == "n" || $priroidadMayorSMenorN == "s" ]]
+        do
+            echo -e "\n\e[1;31mLas opciones validas son s para prioridad mayor y n para prioridad menor \e[0m\e[1;33";
+            echo -n -e "  ¿Quieres \e[1;33m prioridad\e[0m Mayor (S) o Menor(n)? ";
+            read priroidadMayorSMenorN;
+            priroidadMayorSMenorN=$(echo "priroidadMayorSMenorN" | tr '[:upper:]' '[:lower:]')
+        done
+    echo "$priroidadMayorSMenorN" >> $informe;
+    echo -e "\e[1;32m$priroidadMayorSMenorN\e[0m" >> $informeColor;
+
+    sleep 0.2;
+    clear;
+    cabeceraTeclado;
+
+
     if [[ "$conEntradaCPU" == 's' ]]
     then
         echo -n -e " Introduzca el \e[1;33mtiempo por pagina\e[0m en entrada a la CPU: ";
@@ -1271,6 +1296,7 @@ entradaTeclado(){
         sleep 0.2;
         clear;
         cabeceraTeclado;
+
     else
         tiempoPorPagina=0
         conEntradaCPU=0

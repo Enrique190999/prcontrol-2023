@@ -184,6 +184,9 @@ nMarcos=();
 #Vector que recoge la cantidad de marcos de cada proceso
 ordenados=();
 
+# 15-05 Agrego vector para prioridad
+prProcesos=();
+
 #Vector que recoge el número de páginas por proceso
 maxpags=();
 #Vector que recoge el número máximo de páginas de los procesos
@@ -210,7 +213,7 @@ nParametrosGenerales=5;
 hayLog=1
 
 #####################################Tiempo de Entrada CPU#####################
-
+ƒ
 # parametro para la entrada de datos por teclado
 conEntradaCPU='';
 
@@ -476,9 +479,10 @@ cabeceraTeclado(){
 
     printf "\n\e[1;33m Procesos:\e[0m\n"
 
+    # 15-05 Agrego cabeceras para prioridad
 
-    echo -e " Ref Tll Tej nMar Cod Dirección-Página." | tee -a $informeColor
-    echo -e " Ref Tll Tej nMar Cod Dirección-Página." >> $informe
+    echo -e " Ref Tll Pri Tej nMar Cod Dirección-Página." | tee -a $informeColor
+    echo -e " Ref Tll Pri Tej nMar Cod Dirección-Página." >> $informe
 
 
     ordenacion
@@ -498,14 +502,14 @@ cabeceraTeclado(){
             if [[ ord -lt 10 ]]
             then
 
-                printf " \e[1;3${colorines[$ord]}mP0$ord %3u %3u %4u %3u  \e[0m"   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
-                printf " P0$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"  >> $informe
+                printf " \e[1;3${colorines[$ord]}mP0$ord %3u %3u %4u %3u  \e[0m"   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
+                printf " P0$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"  >> $informe
 
 
             else
 
-                printf " \e[1;3${colorines[$ord]}mP$ord %3u %3u %4u  \e[0m"   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
-                printf " P$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"  >> $informe
+                printf " \e[1;3${colorines[$ord]}mP$ord %3u %3u %4u  \e[0m"   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
+                printf " P$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"  >> $informe
 
             fi
             counter=0;
@@ -1445,6 +1449,35 @@ entradaTeclado(){
 
 
             echo -n "${tLlegada[$p]};${nMarcos[$p]};${paginasCodigo[$p]};;" >> "${ficheroAMano}"
+
+            # 15-05 Almaceno la prioridad de los procesos
+            
+
+            echo -n -e "\n Introduzca la \e[1;33mprioridad\e[0m del proceso $p: ";
+            read prProcesos[$p];
+
+            echo -en "\n Introduzca la prioridad del proceso $p: " >> $informe;
+            echo -en "\n Introduzca la \e[1;33mprioridad\e[0m del proceso $p: " >> $informeColor;
+
+           # REVISAR NO FUNCIONA EL BUCLE
+            while [[ $p -ge $minimoPrioridad && $p -le $maximoPrioridad ]] 
+                do
+                    echo "${p} >= ${minimoPrioridad} o ${p} <= ${maximoPrioridad}";
+                    echo -e "\n \e[1;31m El número de paginas debe de ser mayor o igual que la prioridad mínima (${minimoPrioridad}) y menor o igual que la prioridad máxima (${maximoPrioridad}): \e[0m";
+                    echo -n -e "\n Introduzca la \e[1;33mprioridad\e[0m del proceso $p: ";
+                    read prProcesos[$p];
+                done
+
+            echo "${prProcesos[$p]}" >> $informe;
+            echo -e "\e[1;32m${prProcesos[$p]}\e[0m" >> $informeColor;
+
+
+            clear
+            cabeceraTeclado;
+
+
+
+            echo -n "${tLlegada[$p]};${nMarcos[$p]};${paginasCodigo[$p]};${prProcesos[$p]};;" >> "${ficheroAMano}"
 
 
     

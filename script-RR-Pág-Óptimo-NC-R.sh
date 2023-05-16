@@ -466,7 +466,7 @@ cabeceraTeclado(){
     printf " Marcos de página de la memoria principal:                                  \e[1m%6s\e[0m\n" "${marcosMem}"
     printf " Prioridad Mayor/menor:                                                     \e[1m%6s\e[0m\n" "$(case $prioridadMayorMMenorN in m) echo 'Mayor' ;; n) echo 'Menor';; 0) echo 'Sin definir';; esac)"
     printf " Prioridad mínima:                                                          \e[1m%6s\e[0m\n" "${minimoPrioridad}"
-    printf " Prioridad mínima:                                                          \e[1m%6s\e[0m\n" "${maximoPrioridad}"
+    printf " Prioridad máxima:                                                          \e[1m%6s\e[0m\n" "${maximoPrioridad}"
     
     # 02-05 COMENTO LA LINEA DONDE MUESTRO POR PANTALLA EL QUANTUM DE TIEMPO 
     # printf " Quantum de tiempo:                                                         \e[1m%6s\e[0m\n" "${tamQuant}"
@@ -1459,10 +1459,11 @@ entradaTeclado(){
             echo -en "\n Introduzca la prioridad del proceso $p: " >> $informe;
             echo -en "\n Introduzca la \e[1;33mprioridad\e[0m del proceso $p: " >> $informeColor;
 
-           # REVISAR NO FUNCIONA EL BUCLE
-            while [[ $p -ge $minimoPrioridad && $p -le $maximoPrioridad ]] 
+            # REVISAR NO FUNCIONA EL BUCLE
+            # while ! [[ "$minimoPrioridad" =~ ^[0-9]+$ ]]; do || $p -gt $minimoPrioridad
+            while [[ prProcesos[$p] -gt $maximoPrioridad || prProcesos[$p] -lt $minimoPrioridad ]] 
                 do
-                    echo "${p} >= ${minimoPrioridad} o ${p} <= ${maximoPrioridad}";
+                    echo "NO ${p} < ${minimoPrioridad} o NO ${p} > ${maximoPrioridad}";
                     echo -e "\n \e[1;31m El número de paginas debe de ser mayor o igual que la prioridad mínima (${minimoPrioridad}) y menor o igual que la prioridad máxima (${maximoPrioridad}): \e[0m";
                     echo -n -e "\n Introduzca la \e[1;33mprioridad\e[0m del proceso $p: ";
                     read prProcesos[$p];

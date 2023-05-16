@@ -75,14 +75,14 @@
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  [1;32mP01   1   0    0   0  [0m [1;32mP01   0   0    0   0  [0m
 
- Introduzca el [1;33mnúmero de marcos[0m del proceso: [1;32m3[0m
+ Introduzca el [1;33mnúmero de marcos[0m del proceso: [1;32m2[0m
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- [1;32mP01   1   0    0   3  [0m [1;32mP01   0   0    0   0  [0m
+ [1;32mP01   1   0    0   2  [0m [1;32mP01   0   0    0   0  [0m
 
- Introduzca el [1;33mnúmero de páginas[0m de código del proceso 1: [1;32m2[0m
+ Introduzca el [1;33mnúmero de páginas[0m de código del proceso 1: [1;32m1[0m
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- [1;32mP01   1   0    0   3  [0m [1;32mP01   2   0    0   0  [0m
+ [1;32mP01   1   0    0   2  [0m [1;32mP01   1   0    0   0  [0m
 
- Introduzca la [1;33mprioridad[0m del proceso 1: [1;32m0[0m
+ Introduzca la [1;33mprioridad[0m del proceso 1: [1;32m9[0m
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- [1;32mP01   1   0    0   3  [0m [1;32mP01   2   0    0   0  [0m
+ [1;32mP01   1   9    0   2  [0m [1;32mP01   1   0    0   0  [0m

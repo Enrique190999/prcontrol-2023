@@ -2539,11 +2539,86 @@ ordenacion(){
         #!# sustiudo p por nProc
         if [[ $count -gt $p ]] 
             then
-            acabado=1
+                acabado=1
             else
-            ((t++))
+                ((t++))
         fi
     done
+
+    ## ACTUALIZO LA FORMA DE ORDENACION - 01/06/2023
+
+    ultimoIndiceTllegada=$(( ${#tLlegada[@]} - 1 ));
+    valorMaximoTllegada=0;
+
+    ## Le doy valor a valorMaximoTllegada mientras Tllegada tenga elemento
+    if [[ $ultimoIndiceTllegada -ge 0 ]]
+        then
+            valorMaximoTllegada=${vector[$ultimoIndiceTllegada]};
+    fi
+    
+    vectorSignificativoLimpio=();
+
+    ## Creo un bucle con un contador para ir uno en uno leyendo prioridaddes
+    for (( contTllegada=1; contTllegada<=$valorMaximoTllegada; contTllegada++ ))
+        do
+            ## Por cada linea almacenare de forma temporal los procesos que tengan el mismo tiempo de llegada
+            vectorTemporalProcesosIgualTllegada=();
+
+            ## Recorro todos los procesos buscando el mismo tll
+
+            for proceso in "${ordenados[@]}"; 
+                do
+                    if [[ ${tLlegada[$proceso]} -eq $contTllegada ]]
+                        then
+                            vectorTemporalProcesosIgualTllegada+=($proceso);
+                    fi  
+            done
+
+            ## Ahora repito el proceso pero con las prioridades
+
+            ## Almaceno la prioridad maxima para ir restando y comprobando
+            contadorPrioridadesOrdenacion=$maximoPrioridad;
+
+            ## Creo otro array temporal con el orden por prioirdades
+            vectorTemporalProcesosOrdenacionPorPrioridad=();
+            if [[ prioridadMayorMMenorN = "m" ]]
+                then
+                    ## Recorro un bucle desde la maximaPrioridad hasta la minimaPrioridad
+                    for (( contadorPrioridadOrdenacion=$maximoPrioridad; contadorPrioridadesOrdenacion>=$minimoPrioridad; contadorPrioridadesOrdenacion-- ))
+                        do
+                            ## Recorro todos los procesos que tienen el mismo tiempo de llegada
+                            for elemento in "${vectorTemporalProcesosIgualTllegada[@]}"; do
+                                ## Pregunto si tiene una prioridad igual al contadorPrioridadOrdenacion de este momento
+                                if [[ ${prProcesos[$elemento]} -eq contadorPrioridadesOrdenacion ]]
+                                    then
+                                        ## Si se cumple se agrega al vector temporal
+                                        vectorSignificativoLimpio+=($elemento);
+                                fi
+                            done
+                        done
+                else
+                    ## Recorro un bucle desde la minimaPrioridad hasta la maximaPrioridad
+                    for (( contadorPrioridadOrdenacion=$minimoPrioridad; contadorPrioridadesOrdenacion>=$maximoPrioridad; contadorPrioridadesOrdenacion++ ))
+                        do
+                            ## Recorro todos los procesos que tienen el mismo tiempo de llegada
+                            for elemento in "${vectorTemporalProcesosIgualTllegada[@]}"; do
+                                ## Pregunto si tiene una prioridad igual al contadorPrioridadOrdenacion de este momento
+                                if [[ ${prProcesos[$elemento]} -eq contadorPrioridadesOrdenacion ]]
+                                    then
+                                        ## Si se cumple se agrega al vector temporal
+                                        vectorSignificativoLimpio+=($elemento);
+                                fi
+                            done
+                        done
+            fi
+
+            ## Almaceno en ordenados cuando termino de ordenar por prioridad
+            ordenados=("${vectorSignificativoLimpio[@]}");
+
+
+        done
+    
+
     #Procesos ordenados en pordenados.
 
 }

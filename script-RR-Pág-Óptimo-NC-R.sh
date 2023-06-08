@@ -2364,8 +2364,10 @@ asignaColores() {
     done
 }
 
+vectorSignificativoLimpio=()
 # Función de ordenación de los procesos
 ordenacion() {
+    vectorSignificativoLimpio=()
     count=1   #Para movernos por el vector ordenados.
     acabado=0 #Indica cuando se ha acabado de ordenar los procesos.
     nproceso=0
@@ -2388,10 +2390,14 @@ ordenacion() {
     ## ACTUALIZO LA FORMA DE ORDENACION - 01/06/2023
 
     valorMaximoTllegada=0
-    echo 
+
     ## Asigno el valor a valorMaximoTllegada si tLlegada tiene elementos
     if [[ ${#tLlegada[@]} -gt 0 ]]; then
-        valorMaximoTllegada=${tLlegada[-1]}
+        for elemento in "${tLlegada[@]}"; do
+            if (( elemento > valorMaximoTllegada )); then
+                valorMaximoTllegada=$elemento
+            fi
+        done
         # echo "ENTRO IF "
         # for valor in "${tLlegada[@]}"
         # do
@@ -2400,11 +2406,12 @@ ordenacion() {
         # done
     fi
     
-    vectorSignificativoLimpio=()
+
     # echo "$valorMaximoTllegada VALOR MAXIMOTTLEGADA // ${#tLlegada[@]} longitud del mismo ";
     contTllegada=0
     ## Creo un bucle con un contador para ir uno en uno leyendo prioridaddes
     for ((contTllegada = 1; contTllegada <= $valorMaximoTllegada; contTllegada++)); do
+        echo "ENTRO FOR"
         ## Por cada linea almacenare de forma temporal los procesos que tengan el mismo tiempo de llegada
         vectorTemporalProcesosIgualTllegada=()
 
@@ -2413,17 +2420,14 @@ ordenacion() {
         for proceso in "${ordenados[@]}"; do
             if [[ ${tLlegada[$proceso]} -eq $contTllegada ]]; then
                 vectorTemporalProcesosIgualTllegada+=($proceso)
+                
             fi
         done
 
         ## Ahora repito el proceso pero con las prioridades
 
-        ## Almaceno la prioridad maxima para ir restando y comprobando
-        contadorPrioridadesOrdenacion=$maximoPrioridad
-
-        ## Creo otro array temporal con el orden por prioridades
-        vectorTemporalProcesosOrdenacionPorPrioridad=()
-        if [[ prioridadMayorMMenorN = "m" ]]; then
+        if [[ $prioridadMayorMMenorN == "m" ]]; then
+            echo "ENTRO PRI M"
             ## Recorro un bucle desde la maximaPrioridad hasta la minimaPrioridad
             for ((contadorPrioridadesOrdenacion = $maximoPrioridad; contadorPrioridadesOrdenacion >= $minimoPrioridad; contadorPrioridadesOrdenacion--)); do
                 ## Recorro todos los procesos que tienen el mismo tiempo de llegada
@@ -2431,10 +2435,18 @@ ordenacion() {
                     ## Pregunto si tiene una prioridad igual al contadorPrioridadOrdenacion de este momento
                     if [[ ${prProcesos[$elemento]} -eq contadorPrioridadesOrdenacion ]]; then
                         ## Si se cumple se agrega al vector temporal
-                        vectorSignificativoLimpio+=($elemento)
+                        vectorSignificativoLimpio+=("$elemento")
+                        
                     fi
                 done
+                
             done
+            echo "------EMPIEZO------"
+            for elemento in "${vectorSignificativoLimpio[@]}"; do
+                 echo "$elemento ORDEN DEL MISMO, tamaño actual ${#vectorSignificativoLimpio[@]}"
+            done
+            echo "------FIN------"
+          
         else
             ## Recorro un bucle desde la minimaPrioridad hasta la maximaPrioridad
             for ((contadorPrioridadesOrdenacion = $minimoPrioridad; contadorPrioridadesOrdenacion >= $maximoPrioridad; contadorPrioridadesOrdenacion++)); do
@@ -2443,16 +2455,18 @@ ordenacion() {
                     ## Pregunto si tiene una prioridad igual al contadorPrioridadOrdenacion de este momento
                     if [[ ${prProcesos[$elemento]} -eq contadorPrioridadesOrdenacion ]]; then
                         ## Si se cumple se agrega al vector temporal
-                        vectorSignificativoLimpio+=($elemento)
+                        vectorSignificativoLimpio+=("$elemento")
                     fi
                 done
             done
         fi
 
+
         ## Almaceno en ordenados cuando termino de ordenar por prioridad
         # ordenados=("${vectorSignificativoLimpio[@]}")
 
     done
+  
 
     #Procesos ordenados en pordenados.
 

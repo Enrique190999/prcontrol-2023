@@ -69,7 +69,3 @@
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  P01   0   0    0   0  P01   0   0    0   0 
-
- Introduzca el tiempo de llegada del proceso 1: 1
- Ref Tll Pri Tej nMar Cod Dirección-Página.
- P01   1   0    0   0  P01   0   0    0   0 

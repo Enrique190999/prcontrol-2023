@@ -506,7 +506,7 @@ cabeceraTeclado(){
                 printf " P0$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"  >> $informe
 
             else
-                printf " \e[1;3${colorines[$ord]}mP$ord %3u %3u %4u   \e[0m"   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
+                printf " \e[1;3${colorines[$ord]}mP$ord %3u %3u %4u %3u %3u  \e[0m"   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
                 printf " P$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"  >> $informe
 
             fi
@@ -1453,7 +1453,7 @@ entradaTeclado(){
 
             echo -n -e "\n Introduzca la \e[1;33mprioridad\e[0m del proceso $p: ";
             read prProcesos[$p];
-            echo "ESTOY EN LA PRIORIDAD ${prProcesos[$p]}"
+            #echo "ESTOY EN LA PRIORIDAD ${prProcesos[$p]}"
 
             echo -en "\n Introduzca la prioridad del proceso $p: " >> $informe;
             echo -en "\n Introduzca la \e[1;33mprioridad\e[0m del proceso $p: " >> $informeColor;
@@ -1473,6 +1473,7 @@ entradaTeclado(){
 
 
             clear
+            ordenacion
             cabeceraTeclado;
 
 
@@ -2388,11 +2389,11 @@ imprimeProcesosAleatorio() {
     if [[ "$conEntradaCPU" == 's' || $tiempoPorPagina -ne 0 ]]
     then
 
-        echo -e " Ref Tll Tej nMar Cod Dirección-Página." | tee -a $informeColor
-        echo -e " Ref Tll Tej nMar Cod Dirección-Página."  >> $informe
+        echo -e " Ref Tll Pri Tej nMar Cod Dirección-Página." | tee -a $informeColor
+        echo -e " Ref Tll Pri Tej nMar Cod Dirección-Página."  >> $informe
     else
-        echo -e " Ref Tll Tej nMar Dirección-Página." | tee -a $informeColor
-        echo -e " Ref Tll Tej nMar Dirección-Página."  >> $informe
+        echo -e " Ref Tll Pri Tej nMar Dirección-Página." | tee -a $informeColor
+        echo -e " Ref Tll Pri Tej nMar Dirección-Página."  >> $informe
     fi
 
 
@@ -2403,22 +2404,22 @@ imprimeProcesosAleatorio() {
             then
                 if [[ "$conEntradaCPU" == 's' || $tiempoPorPagina -ne 0 ]]
                 then
-                    printf " \e[1;3${colorines[$ord]}mP0$ord %3u %3u %4u %3u \e[0m"   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
-                    printf " P0$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" >> $informe
+                    printf " \e[1;3${colorines[$ord]}mP0$ord %3u %3u %4u %3u %3u \e[0m"   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
+                    printf " P0$ord %3u %3u %4u %3u %3u "   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" >> $informe
 
                 else
-                    printf " \e[1;3${colorines[$ord]}mP0$ord %3u %3u %4u \e[0m"   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" | tee -a $informeColor
-                    printf " P0$ord %3u %3u %4u "   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}"  >> $informe
+                    printf " \e[1;3${colorines[$ord]}mP0$ord %3u %3u %4u %3u \e[0m"   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" | tee -a $informeColor
+                    printf " P0$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}"  >> $informe
 
                 fi
             else
                 if [[ "$conEntradaCPU" == 's' || $tiempoPorPagina -ne 0 ]]
                 then
-                    printf " \e[1;3${colorines[$ord]}mP$ord %3u %3u %4u %3u \e[0m"   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
-                    printf " P$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" >> $informe
+                    printf " \e[1;3${colorines[$ord]}mP$ord %3u %3u %4u %3u %3u \e[0m"   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
+                    printf " P$ord %3u %3u %4u %3u %3u "   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" >> $informe
                 else
                     printf " \e[1;3${colorines[$ord]}mP$ord %3u %3u %4u \e[0m"   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" | tee -a $informeColor
-                    printf "  P$ord %3u %3u %4u "   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" >> $informe
+                    printf "  P$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" >> $informe
                 fi
             fi
             counter=0;
@@ -2482,13 +2483,13 @@ imprimeProcesosFinal(){
             if [[ ord -lt 10 ]]
             then
 
-                printf " \e[1;3${colorines[$ord]}mP0$ord %3u %3u %4u %3u \e[0m"   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"| tee -a $informeColor
-                printf " P0$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"  >> $informe
+                printf " \e[1;3${colorines[$ord]}mP0$ord %3u %3u %4u %3u %3u \e[0m"   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"| tee -a $informeColor
+                printf " P0$ord %3u %3u %4u %3u %3u "   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}"  >> $informe
 
             else
 
-                printf " \e[1;3${colorines[$ord]}mP$ord %3u %3u %4u %3u \e[0m"   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
-                printf "  P$ord %3u %3u %4u %3u "   "${tLlegada[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" >> $informe
+                printf " \e[1;3${colorines[$ord]}mP$ord %3u %3u %4u %3u %3u \e[0m"   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" | tee -a $informeColor
+                printf "  P$ord %3u %3u %4u %3u %3u "   "${tLlegada[$ord]}" "${prProcesos[$ord]}" "${tEjec[$ord]}" "${nMarcos[$ord]}" "${paginasCodigo[$ord]}" >> $informe
 
             fi
             counter=0;
@@ -2565,23 +2566,23 @@ ordenacion(){
     contTllegada=0
     ## Creo un bucle con un contador para ir uno en uno leyendo prioridaddes
     for ((contTllegada = 1; contTllegada <= $valorMaximoTllegada; contTllegada++)); do
-        echo "ENTRO FOR"
+        # echo "ENTRO FOR"
         ## Por cada linea almacenare de forma temporal los procesos que tengan el mismo tiempo de llegada
         vectorTemporalProcesosIgualTllegada=()
 
         ## Recorro todos los procesos buscando el mismo tll
 
         for proceso in "${ordenados[@]}"; do
-            if [[ ${tLlegada[$proceso]} -eq $contTllegada ]]; then
-                vectorTemporalProcesosIgualTllegada+=($proceso)
-                
+            # echo "BUCLE MUESTRO PROCESO $proceso"
+            if [[ ${tLlegada[$proceso]} -eq $contTllegada && ${tLlegada[$proceso]} =~ ^[0-9]+$ ]]; then
+                vectorTemporalProcesosIgualTllegada+=("$proceso")
             fi
         done
 
         ## Ahora repito el proceso pero con las prioridades
 
         if [[ $prioridadMayorMMenorN == "m" ]]; then
-            echo "ENTRO PRI M"
+            # echo "ENTRO PRI M"
             ## Recorro un bucle desde la maximaPrioridad hasta la minimaPrioridad
             for ((contadorPrioridadesOrdenacion = $maximoPrioridad; contadorPrioridadesOrdenacion >= $minimoPrioridad; contadorPrioridadesOrdenacion--)); do
                 ## Recorro todos los procesos que tienen el mismo tiempo de llegada
@@ -2595,26 +2596,69 @@ ordenacion(){
                 done
                 
             done
-            echo "------EMPIEZO------"
-            for elemento in "${vectorSignificativoLimpio[@]}"; do
-                 echo "$elemento ORDEN DEL MISMO, tamaño actual ${#vectorSignificativoLimpio[@]}"
-            done
-            echo "------FIN------"
+            # echo "------EMPIEZO------"
+            # for elemento in "${vectorSignificativoLimpio[@]}"; do
+            #      echo "$elemento ORDEN DEL MISMO, tamaño actual ${#vectorSignificativoLimpio[@]}"
+            # done
+            # echo "------FIN------"
           
         else
+        echo "ENTRO ELSE"
             ## Recorro un bucle desde la minimaPrioridad hasta la maximaPrioridad
-            for ((contadorPrioridadesOrdenacion = $minimoPrioridad; contadorPrioridadesOrdenacion >= $maximoPrioridad; contadorPrioridadesOrdenacion++)); do
+            for ((contadorPrioridadesOrdenacion = $minimoPrioridad; contadorPrioridadesOrdenacion <= $maximoPrioridad; contadorPrioridadesOrdenacion++)); do
                 ## Recorro todos los procesos que tienen el mismo tiempo de llegada
+                echo "ENTRO BUCLE $contadorPrioridadesOrdenacion"
                 for elemento in "${vectorTemporalProcesosIgualTllegada[@]}"; do
                     ## Pregunto si tiene una prioridad igual al contadorPrioridadOrdenacion de este momento
                     if [[ ${prProcesos[$elemento]} -eq contadorPrioridadesOrdenacion ]]; then
                         ## Si se cumple se agrega al vector temporal
                         vectorSignificativoLimpio+=("$elemento")
+                        
                     fi
                 done
+                
             done
+
+            
         fi
     done
+    if [ ${#vectorSignificativoLimpio[@]} -eq ${#ordenados[@]} ]; then
+
+
+        
+        #for indice in "${!vectorSignificativoLimpio[@]}"; do
+        #    elemento="${vectorSignificativoLimpio[$indice]}"
+        #    ordenados[$indice]="$elemento"
+        #done
+
+        # echo "INICIO VECTOR PRI"
+        # echo ""
+        
+        # for elemento in "${vectorSignificativoLimpio[@]}"; do
+        #     echo "$elemento -DESPUES- EN VECTOR PRIORIDAD"
+        # done
+
+        # echo "FIN VECTOR PRI"
+        # echo ""
+        # echo "INICIO ORDENADOS"
+        # for elemento in "${ordenados[@]}"; do
+        #    echo "$elemento -DESPUES- EN VECTOR ORDENADOS"
+        # done
+        # echo "FIN ORDENADOS"
+        # echo ""
+
+        # echo "IGUALO"
+        # countPr=1
+        for indice in "${!vectorSignificativoLimpio[@]}"; do
+            ordenados[$indice]="${vectorSignificativoLimpio[$indice]}"
+        done
+
+        # echo "INICIO ORDENADOS DEPSUES IGUALAR"
+        # for elemento in "${ordenados[@]}"; do
+        #     echo "$elemento -DESPUES- EN VECTOR ORDENADOS"
+        # done
+        # echo "FIN ORDENADOS DESPUES IGUALAR"
+    fi
 }
 
 
@@ -5669,11 +5713,4 @@ else
     clear
     cat ./Ayuda/ayuda.txt
     echo ""
-    read -p "Presione INTRO para continuar"
-    clear
-    finalAlternativo
-fi
-
-
-
-###FIN###
+    read -p "Presione INTRO para continua

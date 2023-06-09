@@ -56,11 +56,11 @@
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  Introduzca el Tamaño de la memoria: 10
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- Introduzca el Tamaño de cada marco: 3
+ Introduzca el Tamaño de cada marco: 2
 
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  ¿Quiere que haya tiempos de entrada a CPU?(s/n):  Ref Tll Pri Tej nMar Cod Dirección-Página.
- ¿Quieres prioridad Mayor (m) o Menor (n)? m
+ ¿Quieres prioridad Mayor (m) o Menor (n)? n
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  Ref Tll Pri Tej nMar Cod Dirección-Página.
@@ -70,36 +70,181 @@
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  P01   0   0    0   0  P01   0   0    0   0 
 
- Introduzca el tiempo de llegada del proceso 1: 3
+ Introduzca el tiempo de llegada del proceso 1: 1
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- P01   3   0    0   0  P01   0   0    0   0 
+ P01   1   0    0   0  P01   0   0    0   0 
 
  Introduzca el número de marcos del proceso 1: 3
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- P01   3   0    0   3  P01   0   0    0   0 
+ P01   1   0    0   3  P01   0   0    0   0 
 
  Introduzca el número de páginas de código del proceso 1: 2
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- P01   3   0    0   3  P01   2   0    0   0 
+ P01   1   0    0   3  P01   2   0    0   0 
 
- Introduzca la prioridad del proceso 1: 1
+ Introduzca la prioridad del proceso 1: 4
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- P01   3   1    0   3  P01   2   0    0   0 
+ P01   1   4    0   3  P01   2   0    0   0 
 
  Introduzca la dirección de página 1: 1
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- P01   3   1    0   3  P01   2   0    0   0 1-0 
+ P01   1   4    0   3  P01   2   0    0   0 1-0 
 
  ¿Desea introducir otra direccion de memoria? (s = sí, n = no): n
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- P01   3   1    1   3  P01   2   0    0   0 1-0 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
  Nuevo número de marcos: 3
 
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- P01   3   1    1   3  P01   2   0    0   0 1-0 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
 
 
  ¿Desea introducir otro proceso? (s = sí, n = no): s
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  P02   0   0    0   0  P02   0   0    0   0 
- P01   3   1    1   3  P01   2   0    0   0 1-0 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+
+ Introduzca el tiempo de llegada del proceso 2: 1
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   0    0   0  P02   0   0    0   0 
+
+ Introduzca el número de marcos del proceso 2: 3
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   0    0   3  P02   0   0    0   0 
+
+ Introduzca el número de páginas de código del proceso 2: 2
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   0    0   3  P02   2   0    0   0 
+
+ Introduzca la prioridad del proceso 2: 1
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    0   3  P02   2   0    0   0 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+
+ Introduzca la dirección de página 1: 3
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    0   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+
+ ¿Desea introducir otra direccion de memoria? (s = sí, n = no): n
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ Nuevo número de marcos: 3
+
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+
+
+ ¿Desea introducir otro proceso? (s = sí, n = no): s
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P03   0   0    0   0  P03   0   0    0   0 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+
+ Introduzca el tiempo de llegada del proceso 3: 2
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P03   2   0    0   0  P03   0   0    0   0 
+
+ Introduzca el número de marcos del proceso 3: 3
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P03   2   0    0   3  P03   0   0    0   0 
+
+ Introduzca el número de páginas de código del proceso 3: 1
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P03   2   0    0   3  P03   1   0    0   0 
+
+ Introduzca la prioridad del proceso 3: 7
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P03   2   7    0   3  P03   1   0    0   0 
+
+ Introduzca la dirección de página 1: 2
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P03   2   7    0   3  P03   1   0    0   0 2-1 
+
+ ¿Desea introducir otra direccion de memoria? (s = sí, n = no): n
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P03   2   7    1   3  P03   1   0    0   0 2-1 
+
+ El número de marcos de página es mayor que el número de páginas
+ Esto es un desperdicio de memoria. Número de marcos: 3, Páginas: 1
+ ¿Desea cambiar el número de marcos del proceso? (s = sí, n = no):s
+ Nuevo número de marcos: 1
+
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P03   2   7    1   1  P03   1   0    0   0 2-1 
+
+
+ ¿Desea introducir otro proceso? (s = sí, n = no): s
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P04   0   0    0   0  P04   0   0    0   0 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P03   2   7    1   1  P03   1   0    0   0 2-1 
+
+ Introduzca el tiempo de llegada del proceso 4: 2
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P03   2   7    1   1  P03   1   0    0   0 2-1 
+ P04   2   0    0   0  P04   0   0    0   0 
+
+ Introduzca el número de marcos del proceso 4: 4
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P03   2   7    1   1  P03   1   0    0   0 2-1 
+ P04   2   0    0   4  P04   0   0    0   0 
+
+ Introduzca el número de páginas de código del proceso 4: 3
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P03   2   7    1   1  P03   1   0    0   0 2-1 
+ P04   2   0    0   4  P04   3   0    0   0 
+
+ Introduzca la prioridad del proceso 4: 2
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P04   2   2    0   4  P04   3   0    0   0 
+ P03   2   7    1   1  P03   1   0    0   0 2-1 
+
+ Introduzca la dirección de página 1: 1
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P04   2   2    0   4  P04   3   0    0   0 1-0 
+ P03   2   7    1   1  P03   1   0    0   0 2-1 
+
+ ¿Desea introducir otra direccion de memoria? (s = sí, n = no): n
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P04   2   2    1   4  P04   3   0    0   0 1-0 
+ P03   2   7    1   1  P03   1   0    0   0 2-1 
+ Nuevo número de marcos: 4
+
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ P02   1   1    1   3  P02   2   0    0   0 3-1 
+ P01   1   4    1   3  P01   2   0    0   0 1-0 
+ P04   2   2    1   4  P04   3   0    0   0 1-0 
+ P03   2   7    1   1  P03   1   0    0   0 2-1 

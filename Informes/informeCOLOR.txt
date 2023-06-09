@@ -57,7 +57,7 @@
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  Introduzca el Tamaño de la [1;33mmemoria[0m: [1;32m10[0m
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- Introduzca el Tamaño de cada [1;33mmarco[0m: [1;32m2[0m
+ Introduzca el Tamaño de cada [1;33mmarco[0m: [1;32m3[0m
 
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  ¿Quiere que haya [1;33mtiempos de entrada a CPU[0m?(s/n):  Ref Tll Pri Tej nMar Cod Dirección-Página.
@@ -69,4 +69,38 @@
 
  Ref Tll Pri Tej nMar Cod Dirección-Página.
  Ref Tll Pri Tej nMar Cod Dirección-Página.
- [1;32mP01   0   0    0   0  [0m [1;32mP01   0   0    0   0  [0m
+ [1;32mP01   0   0    0   0   0 [0m
+
+ Introduzca el [1;33mtiempo de llegada[0m del proceso 1: [1;32m3[0m
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ [1;32mP01   3   0    0   0   0 [0m
+
+ Introduzca el [1;33mnúmero de marcos[0m del proceso: [1;32m3[0m
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ [1;32mP01   3   0    0   3   0 [0m
+
+ Introduzca el [1;33mnúmero de páginas[0m de código del proceso 1: [1;32m2[0m
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ [1;32mP01   3   0    0   3   2 [0m
+
+ Introduzca la [1;33mprioridad[0m del proceso 1: [1;32m1[0m
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ [1;32mP01   3   1    0   3   2 [0m
+
+ Introduzca la [1;33mdirección de página[0m 1: [1;32m1[0m
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ [1;32mP01   3   1    0   3   2 [0m[32m1-[1m0[0m 
+
+ ¿Desea introducir otra direccion de memoria? (s = sí, n = no): [1;32mn[0m
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ [1;32mP01   3   1    1   3   2 [0m[32m1-[1m0[0m 
+ Nuevo [1;33mnúmero de marcos[0m: [1;32m3[0m
+
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ [1;32mP01   3   1    1   3   2 [0m[32m1-[1m0[0m 
+
+
+ ¿Desea introducir otro proceso? (s = sí, n = no): [1;32ms[0m
+ Ref Tll Pri Tej nMar Cod Dirección-Página.
+ [1;33mP02   0   0    0   0   0 [0m
+ [1;32mP01   3   1    1   3   2 [0m[32m1-[1m0[0m 
